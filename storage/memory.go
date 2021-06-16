@@ -7,7 +7,12 @@ import (
 type persona = models.Person
 
 func NewMemory() Memory {
-	personas := make(map[int]persona)
+	personas := map[int]persona{
+		0: {Name: "paco", Age: 21, Communities: []models.Community{
+			{Name: "programers"},
+			{Name: "darters"},
+		}},
+	}
 
 	return Memory{
 		CurrentID: 0,
